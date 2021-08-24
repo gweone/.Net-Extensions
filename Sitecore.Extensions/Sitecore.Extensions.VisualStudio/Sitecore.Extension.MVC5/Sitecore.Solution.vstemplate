@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+
+  <TemplateData>
+    <Name>Sitecore Solution</Name>
+    <Description>MVC project for sitecore</Description>
+    <Icon>Icon.Solution.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>Sitecore</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <LanguageTag>C#</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>Web</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <SolutionFolder CreateOnDisk="true" Name="src">
+        <SolutionFolder CreateOnDisk="true" Name="foundation">
+          <ProjectTemplateLink CopyParameters="true" ProjectName="$projectname$">
+            NetStandard\Library.vstemplate
+          </ProjectTemplateLink>
+          <ProjectTemplateLink CopyParameters="true" ProjectName="$projectname$.Foundation">
+            MVC\Sitecore.Child.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="project">
+          <ProjectTemplateLink CopyParameters="true" ProjectName="$projectname$.Website">
+            MVC\Sitecore.Site.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="feature">
+          <ProjectTemplateLink CopyParameters="true" ProjectName="$projectname$.Feature">
+            MVC\Sitecore.Child.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="jobs"></SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="database">
+          <SolutionFolder CreateOnDisk="true" Name="sql">
+
+          </SolutionFolder>
+        </SolutionFolder>
+        
+      </SolutionFolder>
+
+      <SolutionFolder CreateOnDisk="true" Name=".build">
+      </SolutionFolder>
+      <SolutionFolder Name=".configuration">
+      </SolutionFolder>
+      <SolutionFolder CreateOnDisk="true" Name="tools">
+        <SolutionFolder CreateOnDisk="true" Name="build">
+
+        </SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="unicorn">
+              
+        </SolutionFolder>
+      </SolutionFolder>
+    </ProjectCollection>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Sitecore.Extensions.VisualStudio.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c775e2c84928a055</Assembly>
+    <FullClassName>Sitecore.Extensions.VisualStudio.Wizard.SitecoreProjectWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="registry" keyName="WebFormsVS16" isPreunzipped="true">
+      <package id="Sitecore.Kernel"/>
+      <package id="Sitecore.Mvc.Analytics" />
+      <package id="Sitecore.Mvc"/>
+    </packages>
+  </WizardData>
+</VSTemplate>

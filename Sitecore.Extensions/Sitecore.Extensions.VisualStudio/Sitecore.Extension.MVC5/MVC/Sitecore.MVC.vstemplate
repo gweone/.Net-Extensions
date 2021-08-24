@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+
+  <TemplateData>
+    <Name>Sitecore MVC 5</Name>
+    <Description>MVC project for sitecore</Description>
+    <Icon>Icon.MVC.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>Web</TemplateGroupID>
+    <TemplateID>Sitecore.Extension.MVC.v1</TemplateID>
+    <SortOrder>51</SortOrder>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+    <CreateNewFolder>true</CreateNewFolder>
+    <CreateInPlace>true</CreateInPlace>
+    <DefaultName>Sitecore.MVC</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+
+    <LanguageTag>C#</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>Web</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <Folder Name="App_Config" TargetFolderName="App_Config">
+        <Folder Name="Include" TargetFolderName="Include">
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectpathformat$\$safeprojectname$.Settings.config">App_Config\Include\Settings.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectpathformat$\$safeprojectname$.Serialization.config">App_Config\Include\Serialization.config</ProjectItem>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models">
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <Folder Name="Shared" TargetFolderName="Shared">
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Sitecore.Extensions.VisualStudio.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c775e2c84928a055</Assembly>
+    <FullClassName>Sitecore.Extensions.VisualStudio.Wizard.SitecoreProjectWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="registry" keyName="WebFormsVS16" isPreunzipped="true">
+      <package id="Sitecore.Kernel"/>
+      <package id="Sitecore.Mvc.Analytics" />
+      <package id="Sitecore.Mvc"/>
+    </packages>
+  </WizardData>
+</VSTemplate>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="Sitecore.Extensions.VisualStudio.V1" Version="1.0" Language="en-US" Publisher="Julka Hendri" />
+        <DisplayName>Sitecore.Extensions.VisualStudio</DisplayName>
+        <Description xml:space="preserve">Empty VSIX Project.</Description>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="Sitecore.Extension.MVC5" d:TargetPath="|Sitecore.Extension.MVC5;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Wizard" Path="|Sitecore.Extensions.VisualStudio.Wizard|" AssemblyName="|Sitecore.Extensions.VisualStudio.Wizard;AssemblyName|" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\MetroFramework.dll" AssemblyName="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\MetroFramework.Design.dll" AssemblyName="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\MetroFramework.Fonts.dll" AssemblyName="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\AdvancedWizard.dll" AssemblyName="AdvancedWizard, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f78a146ea70566cc" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\NuGet.Protocol.dll" AssemblyName="NuGet.Protocol, Version=5.11.0.10, Culture=neutral, PublicKeyToken=31bf3856ad364e35" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\NuGet.Packaging.dll" AssemblyName="NuGet.Packaging, Version=5.11.0.10, Culture=neutral, PublicKeyToken=31bf3856ad364e35" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\NuGet.Common.dll" AssemblyName="NuGet.Common, Version=5.11.0.10, Culture=neutral, PublicKeyToken=31bf3856ad364e35" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\NuGet.Configuration.dll" AssemblyName="NuGet.Configuration, Version=5.11.0.10, Culture=neutral, PublicKeyToken=31bf3856ad364e35" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\NuGet.Frameworks.dll" AssemblyName="NuGet.Frameworks, Version=5.11.0.10, Culture=neutral, PublicKeyToken=31bf3856ad364e35" d:VsixSubPath="Libraries" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="Libraries\NuGet.Versioning.dll" AssemblyName="NuGet.Versioning, Version=5.11.0.10, Culture=neutral, PublicKeyToken=31bf3856ad364e35" d:VsixSubPath="Libraries" />
+    </Assets>
+</PackageManifest>
