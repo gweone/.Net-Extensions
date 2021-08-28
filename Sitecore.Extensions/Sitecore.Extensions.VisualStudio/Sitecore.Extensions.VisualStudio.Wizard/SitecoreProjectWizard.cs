@@ -17,7 +17,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
     {
         public static Dictionary<string, string> GlobalDictionary =
                new Dictionary<string, string>();
-        SitecoreData sitecoreData;
+        protected SitecoreData sitecoreData;
         public override void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             if (automationObject is DTE)
@@ -25,9 +25,9 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
                 TemplateWizardFrom wizard = GenerateWizardUI(automationObject, replacementsDictionary, runKind, customParams);
                 wizard.ShowDialog();
             }
-            GlobalDictionary = replacementsDictionary;
             PrepareStarting(automationObject, replacementsDictionary, runKind, customParams);
             base.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
+            GlobalDictionary = replacementsDictionary;
         }
 
         protected virtual void PrepareStarting(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)

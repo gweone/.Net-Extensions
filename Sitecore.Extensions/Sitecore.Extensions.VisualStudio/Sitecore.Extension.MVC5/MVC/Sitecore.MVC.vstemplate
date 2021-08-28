@@ -53,9 +53,9 @@
   </WizardExtension>
   <WizardData>
     <packages repository="registry" keyName="WebFormsVS16" isPreunzipped="true">
-      <package id="Sitecore.Kernel"/>
-      <package id="Sitecore.Mvc.Analytics" />
-      <package id="Sitecore.Mvc"/>
+      <package id="Sitecore.Kernel"  privateassets="all"/>
+      <package id="Sitecore.Mvc.Analytics"  privateassets="all"/>
+      <package id="Sitecore.Mvc"  privateassets="all"/>
     </packages>
   </WizardData>
 </VSTemplate>

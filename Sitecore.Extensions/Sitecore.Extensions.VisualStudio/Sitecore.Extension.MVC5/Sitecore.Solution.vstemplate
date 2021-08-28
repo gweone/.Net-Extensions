@@ -40,6 +40,12 @@
             MVC\Sitecore.Child.vstemplate
           </ProjectTemplateLink>
         </SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="api">
+          <ProjectTemplateLink CopyParameters="true" ProjectName="$projectname$.API">
+            MVC\Sitecore.Child.vstemplate
+          </ProjectTemplateLink>
+          
+        </SolutionFolder>
         <SolutionFolder CreateOnDisk="true" Name="jobs"></SolutionFolder>
         <SolutionFolder CreateOnDisk="true" Name="database">
           <SolutionFolder CreateOnDisk="true" Name="sql">
@@ -48,30 +54,23 @@
         </SolutionFolder>
         
       </SolutionFolder>
-
+      <SolutionFolder CreateOnDisk="true" Name="items"></SolutionFolder>
       <SolutionFolder CreateOnDisk="true" Name=".build">
-      </SolutionFolder>
-      <SolutionFolder Name=".configuration">
-      </SolutionFolder>
-      <SolutionFolder CreateOnDisk="true" Name="tools">
-        <SolutionFolder CreateOnDisk="true" Name="build">
-
-        </SolutionFolder>
-        <SolutionFolder CreateOnDisk="true" Name="unicorn">
-              
-        </SolutionFolder>
+        <ProjectTemplateLink CopyParameters="true">
+          content\content.vstemplate
+        </ProjectTemplateLink>
       </SolutionFolder>
     </ProjectCollection>
   </TemplateContent>
   <WizardExtension>
     <Assembly>Sitecore.Extensions.VisualStudio.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c775e2c84928a055</Assembly>
-    <FullClassName>Sitecore.Extensions.VisualStudio.Wizard.SitecoreProjectWizard</FullClassName>
+    <FullClassName>Sitecore.Extensions.VisualStudio.Wizard.SitecoreSolutionWizard</FullClassName>
   </WizardExtension>
   <WizardData>
     <packages repository="registry" keyName="WebFormsVS16" isPreunzipped="true">
-      <package id="Sitecore.Kernel"/>
-      <package id="Sitecore.Mvc.Analytics" />
-      <package id="Sitecore.Mvc"/>
+      <package id="Sitecore.Kernel" privateassets="all"/>
+      <package id="Sitecore.Mvc.Analytics" privateassets="all"/>
+      <package id="Sitecore.Mvc" privateassets="all"/>
     </packages>
   </WizardData>
 </VSTemplate>

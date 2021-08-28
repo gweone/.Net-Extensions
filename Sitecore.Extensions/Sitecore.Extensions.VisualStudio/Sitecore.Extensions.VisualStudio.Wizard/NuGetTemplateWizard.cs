@@ -68,18 +68,18 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
                 packageGenerator.AppendLine("<PackageReference");
                 packageGenerator.AppendFormat(" Include=\"{0}\"", package.Attribute("id").Value);
 
-                var version = package.Attribute("version");
-                if (version != null && !string.IsNullOrEmpty(version.Value))
-                {
-                    packageGenerator.AppendFormat(" Version=\"{0}\"", ResolvePackageVersion(package.Attribute("id").Value, version.Value));
-                }
+                var version = ResolvePackageVersion(package.Attribute("id").Value, package.Attribute("version")?.Value);
+                if (!string.IsNullOrEmpty(version))
+                    packageGenerator.AppendFormat(" Version=\"{0}\"", ResolvePackageVersion(package.Attribute("id").Value, version));
 
-                var condition = package.Attribute("condition");
-                if (condition != null && !string.IsNullOrEmpty(condition.Value))
-                {
-                    packageGenerator.AppendFormat(" Condition=\"{0}\"", condition.Value);
-                }
-                packageGenerator.Append("/>");
+                var condition = package.Attribute("condition")?.Value;
+                if (!string.IsNullOrEmpty(condition))
+                    packageGenerator.AppendFormat(" Condition=\"{0}\"", condition);
+                packageGenerator.Append(">").AppendLine();
+                var privateassets = package.Attribute("privateassets")?.Value;
+                if (!string.IsNullOrEmpty(privateassets))
+                    packageGenerator.AppendFormat("<PrivateAssets>{0}</PrivateAssets>", privateassets).AppendLine();
+                packageGenerator.Append("</PackageReference>");
             }
             return packageGenerator.ToString();
         }

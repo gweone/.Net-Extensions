@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+
+  <TemplateData>
+    <Name>Configuration</Name>
+    <Description>Configuration</Description>
+    <ProjectType>CSharp</ProjectType>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="Content.md">
+      <Folder Name=".configuration">
+        <ProjectItem ReplaceParameters="true" >.gitignore</ProjectItem>
+        <ProjectItem ReplaceParameters="true" >nuget.config</ProjectItem>
+        <ProjectItem ReplaceParameters="true" >README.md</ProjectItem>
+      </Folder>
+      <Folder Name="tools">
+        <Folder Name="mvc">
+          <ProjectItem ReplaceParameters="true" >Projects.Foundation.Build.cmd</ProjectItem>
+          <ProjectItem ReplaceParameters="true" >Projects.Feature.Build.cmd</ProjectItem>
+          <ProjectItem ReplaceParameters="true" >Projects.API.Build.cmd</ProjectItem>
+          <ProjectItem ReplaceParameters="true" >Projects.Project.Build.cmd</ProjectItem>
+        </Folder>
+        <Folder Name="unicorn">
+          <ProjectItem ReplaceParameters="false">MicroCHAP.dll</ProjectItem>
+          <ProjectItem ReplaceParameters="true">sync.ps1</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Unicorn.psm1</ProjectItem>
+        </Folder>
+      </Folder>
+
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -59,9 +59,9 @@
   </WizardExtension>
   <WizardData>
     <packages repository="registry" keyName="WebFormsVS16" isPreunzipped="true" method="Append">
-      <package id="Sitecore.Logging"/>
-      <package id="Sitecore.Update" />
-      <package id="Sitecore.Zip"/>
+      <package id="Sitecore.Logging" privateassets="all"/>
+      <package id="Sitecore.Update" privateassets="all"/>
+      <package id="Sitecore.Zip" privateassets="all"/>
     </packages>
   </WizardData>
 </VSTemplate>
