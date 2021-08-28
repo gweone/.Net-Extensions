@@ -47,11 +47,11 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
             cboSitecoreVersion.ValueMember = cboSitecoreVersion.DisplayMember = "OriginalVersion";
         }
 
-        public SitecoreData Data
+        public SitecoreData.Configuration Data
         {
             get
             {
-                var data = new SitecoreData() {
+                var data = new SitecoreData.Configuration() {
                     Url = txtSiteCoreUrl.Text,
                     Version = cboSitecoreVersion.Text,
                     PackageSource = txtNugetV3.Text

@@ -79,6 +79,12 @@
     <Compile Include="Component\SitecoreProjectSetupUC.Designer.cs">
       <DependentUpon>SitecoreProjectSetupUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\SitecoreSmtpUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\SitecoreSmtpUC.Designer.cs">
+      <DependentUpon>SitecoreSmtpUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\TemplateWizardFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Component\SitecoreProjectSetupUC.resx">
       <DependentUpon>SitecoreProjectSetupUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\SitecoreSmtpUC.resx">
+      <DependentUpon>SitecoreSmtpUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\TemplateWizardFrom.resx">
+      <DependentUpon>TemplateWizardFrom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

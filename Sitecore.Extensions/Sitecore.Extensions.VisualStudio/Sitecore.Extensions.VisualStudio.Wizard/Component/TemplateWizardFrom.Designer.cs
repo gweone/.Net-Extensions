@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateWizardFrom));
             this.wizardPanel = new AdvancedWizardControl.Wizard.AdvancedWizard();
-            this.wizardPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // wizardPanel
@@ -53,7 +51,7 @@
             this.wizardPanel.NextButtonEnabled = false;
             this.wizardPanel.NextButtonText = "Next >";
             this.wizardPanel.ProcessKeys = false;
-            this.wizardPanel.Size = new System.Drawing.Size(577, 377);
+            this.wizardPanel.Size = new System.Drawing.Size(760, 420);
             this.wizardPanel.TabIndex = 0;
             this.wizardPanel.TouchScreen = false;
             this.wizardPanel.Cancel += new System.EventHandler(this.wizardPanel_Cancel);
@@ -61,15 +59,15 @@
             this.wizardPanel.Back += new System.EventHandler(this.wizardPanel_Back);
             this.wizardPanel.Finish += new System.EventHandler(this.wizardPanel_Finish);
             // 
-            // ECSWizardForm
+            // TemplateWizardFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 457);
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ControlBox = false;
             this.Controls.Add(this.wizardPanel);
-            this.Name = "ECSWizardForm";
+            this.Name = "TemplateWizardFrom";
             this.Text = "Wizard";
-            this.wizardPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

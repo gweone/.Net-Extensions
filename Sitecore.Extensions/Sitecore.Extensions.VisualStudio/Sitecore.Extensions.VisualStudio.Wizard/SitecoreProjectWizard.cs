@@ -17,7 +17,8 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
     {
         public static Dictionary<string, string> GlobalDictionary =
                new Dictionary<string, string>();
-        protected SitecoreData sitecoreData;
+        protected SitecoreData sitecoreData = new SitecoreData();
+        int setupUCIndex = 0;
         public override void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             if (automationObject is DTE)
@@ -47,36 +48,44 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
         {
             TemplateWizardFrom wizard = new TemplateWizardFrom();
             wizard.Text = "Sitecore Project MVC Setup";
-            var dataEditor = new SitecoreProjectSetupUC();
-            wizard.CreateNewPage("Sitecore", "Option to Setup Sitecore").Controls.Add(dataEditor);
-            wizard.OnStepChanged += (s, args) =>
+            setupUCIndex = wizard.CreateNewPage("Sitecore", "Option to Setup Sitecore", new SitecoreProjectSetupUC()
             {
-                switch (args.Step)
-                {
-                    case WizardStep.Next:
-                    case WizardStep.Back:
-                        break;
-                    case WizardStep.Cancel:
-                        args.IsValid = false;
-                        break;
-                    default:
-                        break;
-                }
-            };
-            wizard.OnFinished += (s, args) =>
-            {
-                sitecoreData = dataEditor.Data;
-                replacementsDictionary.Add("$sc_url$", sitecoreData.Url);
-                replacementsDictionary.Add("$sc_version$", sitecoreData.Version);
-                replacementsDictionary.Add("$sc_package$", sitecoreData.PackageSource);
-            };
+                Name = "setupUC"
+            });
+            wizard.OnStepChanged += (s, args) => Wizard_OnStepChanged(s as TemplateWizardFrom, replacementsDictionary, args);
+            wizard.OnFinished += (s, args) =>  Wizard_OnFinished(s as TemplateWizardFrom, replacementsDictionary, args);
             return wizard;
+        }
+
+        protected virtual void Wizard_OnFinished(TemplateWizardFrom wizard, Dictionary<string, string> replacementsDictionary, EventArgs args)
+        {
+            var control = wizard.GetPage(setupUCIndex).Controls.Find("setupUC", false).FirstOrDefault() as SitecoreProjectSetupUC;
+            sitecoreData.Config = control.Data;
+            replacementsDictionary.Add("$sc_url$", sitecoreData.Config.Url);
+            replacementsDictionary.Add("$sc_version$", sitecoreData.Config.Version);
+            replacementsDictionary.Add("$sc_package$", sitecoreData.Config.PackageSource);
+            
+        }
+
+        protected virtual void Wizard_OnStepChanged(TemplateWizardFrom wizard, Dictionary<string, string> replacementsDictionary, StepChangedEventArgs args)
+        {
+            switch (args.Step)
+            {
+                case WizardStep.Next:
+                case WizardStep.Back:
+                    break;
+                case WizardStep.Cancel:
+                    args.IsValid = false;
+                    break;
+                default:
+                    break;
+            }
         }
 
         protected override string ResolvePackageVersion(string packageid, string version)
         {
             if (packageid.StartsWith("Sitecore") && sitecoreData != null)
-                return sitecoreData.Version;
+                return sitecoreData.Config.Version;
             return base.ResolvePackageVersion(packageid, version);
         }
     }

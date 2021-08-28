@@ -46,7 +46,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Components
         public event StepChanged OnStepChanged;
         public event Finished OnFinished;
 
-        public Panel CreateNewPage(string title, string description)
+        public int CreateNewPage(string title, string description)
         {
             var panel = new AdvancedWizardControl.WizardPages.AdvancedWizardPage()
             {
@@ -60,9 +60,16 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Components
                 
             };
             wizardPanel.Controls.Add(panel);
-            wizardPanel.WizardPages.Add(panel);
+            var index = wizardPanel.WizardPages.Add(panel);
             wizardPanel.NextButtonEnabled = wizardPanel.WizardPages.Count > 1;
-            return panel;
+            return index;
+        }
+
+        public int CreateNewPage(string title, string description, params Control[] controls)
+        {
+            var index = CreateNewPage(title, description);
+            wizardPanel.WizardPages[index].Controls.AddRange(controls);
+            return index;
         }
 
         public Panel GetPage(int page)
@@ -81,7 +88,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Components
         private void wizardPanel_Back(object sender, EventArgs e)
         {
             if (OnStepChanged != null)
-                OnStepChanged(sender, new StepChangedEventArgs(WizardStep.Back, wizardPanel.WizardPages.IndexOf(wizardPanel.CurrentPage)));
+                OnStepChanged(this, new StepChangedEventArgs(WizardStep.Back, wizardPanel.WizardPages.IndexOf(wizardPanel.CurrentPage)));
         }
 
         private void wizardPanel_Cancel(object sender, EventArgs e)
@@ -89,7 +96,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Components
             var args = new StepChangedEventArgs(WizardStep.Cancel, wizardPanel.WizardPages.IndexOf(wizardPanel.CurrentPage));
             args.IsValid = true;
             if (OnStepChanged != null)
-                OnStepChanged(sender, args);
+                OnStepChanged(this, args);
             if (args.IsValid)
             {
                 this.DialogResult = DialogResult.Cancel;
@@ -100,14 +107,14 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Components
         private void wizardPanel_Finish(object sender, EventArgs e)
         {
             if (OnFinished != null)
-                OnFinished(sender, e);
+                OnFinished(this, e);
             this.Close();
         }
 
         private void wizardPanel_Next(object sender, AdvancedWizardControl.EventArguments.WizardEventArgs e)
         {
             if (OnStepChanged != null)
-                OnStepChanged(sender, new StepChangedEventArgs(WizardStep.Next, e.NextPageIndex));
+                OnStepChanged(this, new StepChangedEventArgs(WizardStep.Next, e.NextPageIndex));
         }
     }
 }

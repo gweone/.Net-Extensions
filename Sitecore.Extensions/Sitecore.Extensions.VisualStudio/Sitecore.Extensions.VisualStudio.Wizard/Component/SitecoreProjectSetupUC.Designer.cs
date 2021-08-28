@@ -100,7 +100,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
             this.Controls.Add(this.txtSiteCoreUrl);
             this.Controls.Add(this.lblDataProvider);
             this.Name = "SitecoreProjectSetupUC";
-            this.Size = new System.Drawing.Size(544, 138);
+            this.Size = new System.Drawing.Size(550, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
 

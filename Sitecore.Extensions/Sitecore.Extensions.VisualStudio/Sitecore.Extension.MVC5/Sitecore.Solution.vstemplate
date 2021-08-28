@@ -54,7 +54,10 @@
         </SolutionFolder>
         
       </SolutionFolder>
-      <SolutionFolder CreateOnDisk="true" Name="items"></SolutionFolder>
+      <SolutionFolder CreateOnDisk="true" Name="items">
+        <SolutionFolder CreateOnDisk="true" Name="Shared"></SolutionFolder>
+        <SolutionFolder CreateOnDisk="true" Name="Project"></SolutionFolder>
+      </SolutionFolder>
       <SolutionFolder CreateOnDisk="true" Name=".build">
         <ProjectTemplateLink CopyParameters="true">
           content\content.vstemplate
