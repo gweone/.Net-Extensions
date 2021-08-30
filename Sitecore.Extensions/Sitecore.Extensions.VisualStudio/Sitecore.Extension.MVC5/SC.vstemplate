@@ -61,7 +61,7 @@
       </SolutionFolder>
       <SolutionFolder CreateOnDisk="true" Name=".build">
         <ProjectTemplateLink CopyParameters="true">
-          content\content.vstemplate
+          items\solutionitems.vstemplate
         </ProjectTemplateLink>
       </SolutionFolder>
     </ProjectCollection>
@@ -69,6 +69,10 @@
   <WizardExtension>
     <Assembly>Sitecore.Extensions.VisualStudio.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c775e2c84928a055</Assembly>
     <FullClassName>Sitecore.Extensions.VisualStudio.Wizard.SitecoreSolutionWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>Sitecore.Extensions.VisualStudio.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c775e2c84928a055</Assembly>
+    <FullClassName>Sitecore.Extensions.VisualStudio.Wizard.SitecoreSolutionItemWizard</FullClassName>
   </WizardExtension>
   <WizardData>
     <packages repository="registry" keyName="WebFormsVS16" isPreunzipped="true">

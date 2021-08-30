@@ -54,16 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\.configuration\.gitignore" />
-    <None Include="content\.configuration\nuget.config" />
-    <None Include="content\.configuration\README.md" />
-    <None Include="content\Content.md" />
-    <None Include="content\tools\mvc\Projects.API.Build.cmd" />
-    <None Include="content\tools\mvc\Projects.Feature.Build.cmd" />
-    <None Include="content\tools\mvc\Projects.Project.Build.cmd" />
-    <None Include="content\tools\mvc\Projects.Foundation.Build.cmd" />
-    <None Include="content\tools\unicorn\sync.ps1" />
-    <None Include="content\tools\unicorn\Unicorn.psm1" />
+    <None Include="items\.configuration\.gitignore" />
+    <None Include="items\.configuration\nuget.config" />
+    <None Include="items\.configuration\README.md" />
+    <None Include="items\Content.md" />
+    <None Include="items\tools\mvc\Projects.API.Build.cmd" />
+    <None Include="items\tools\mvc\Projects.Feature.Build.cmd" />
+    <None Include="items\tools\mvc\Projects.Project.Build.cmd" />
+    <None Include="items\tools\mvc\Projects.Foundation.Build.cmd" />
+    <None Include="items\tools\unicorn\sync.ps1" />
+    <None Include="items\tools\unicorn\Unicorn.psm1" />
     <None Include="MVC\App_Config\Include\Project\Global.Website.config" />
     <None Include="MVC\App_Config\Include\Project\Website.config" />
     <None Include="MVC\App_Config\Include\Project\Website.Serialization.config" />
@@ -106,8 +106,8 @@
     <None Include="MVC\Sitecore.Site.vstemplate" />
     <None Include="MVC\Sitecore.Child.vstemplate" />
     <None Include="Icon.Solution.ico" />
-    <None Include="content\content.vstemplate" />
-    <None Include="content\tools\unicorn\MicroCHAP.dll" />
+    <None Include="items\solutionitems.vstemplate" />
+    <None Include="items\tools\unicorn\MicroCHAP.dll" />
     <Content Include="MVC\favicon.ico" />
     <VSTemplate Include="MVC\Sitecore.MVC.vstemplate" />
     <VSTemplate Include="SC.vstemplate" />
