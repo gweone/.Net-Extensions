@@ -24,7 +24,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
             if (projectPath.Split('.').Length > 1)
                 projectPath = string.Join("\\", projectPath.Split('.').Take(2).Reverse());
             replacementsDictionary["$projectpathformat$"] = projectPath;
-
+            replacementsDictionary["$targetframeworkversion$"] = SitecoreProjectWizard.GlobalDictionary["$targetframeworkversion$"];
             base.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
         }
     }

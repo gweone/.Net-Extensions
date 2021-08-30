@@ -39,7 +39,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
             {
                 projectPath = string.Join("\\", projectPath.Split('.').Take(2));
                 solutionPath = projectPath.Split('.').FirstOrDefault();
-            }                
+            }
             replacementsDictionary["$projectpathformat$"] = projectPath;
             replacementsDictionary["$solutionpathformat$"] = solutionPath;
         }
@@ -48,12 +48,12 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
         {
             TemplateWizardFrom wizard = new TemplateWizardFrom();
             wizard.Text = "Sitecore Project MVC Setup";
-            setupUCIndex = wizard.CreateNewPage("Sitecore", "Option to Setup Sitecore", new SitecoreProjectSetupUC()
+            setupUCIndex = wizard.CreateNewPage("Sitecore", "Option to Setup Sitecore", new SitecoreProjectSetupUC(replacementsDictionary["$solutiondirectory$"])
             {
                 Name = "setupUC"
             });
             wizard.OnStepChanged += (s, args) => Wizard_OnStepChanged(s as TemplateWizardFrom, replacementsDictionary, args);
-            wizard.OnFinished += (s, args) =>  Wizard_OnFinished(s as TemplateWizardFrom, replacementsDictionary, args);
+            wizard.OnFinished += (s, args) => Wizard_OnFinished(s as TemplateWizardFrom, replacementsDictionary, args);
             return wizard;
         }
 
@@ -64,7 +64,9 @@ namespace Sitecore.Extensions.VisualStudio.Wizard
             replacementsDictionary.Add("$sc_url$", sitecoreData.Config.Url);
             replacementsDictionary.Add("$sc_version$", sitecoreData.Config.Version);
             replacementsDictionary.Add("$sc_package$", sitecoreData.Config.PackageSource);
-            
+            if (!string.IsNullOrEmpty(sitecoreData.Config.TargetFramework))
+                replacementsDictionary["$targetframeworkversion$"] = sitecoreData.Config.TargetFramework;
+
         }
 
         protected virtual void Wizard_OnStepChanged(TemplateWizardFrom wizard, Dictionary<string, string> replacementsDictionary, StepChangedEventArgs args)

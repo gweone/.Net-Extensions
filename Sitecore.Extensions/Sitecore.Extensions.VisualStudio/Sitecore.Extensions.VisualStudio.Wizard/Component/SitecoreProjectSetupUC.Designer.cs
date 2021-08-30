@@ -35,6 +35,9 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
             this.cboSitecoreVersion = new MetroFramework.Controls.MetroComboBox();
             this.txtNugetV3 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtFramework = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.cbFrameworkOverride = new MetroFramework.Controls.MetroCheckBox();
             this.SuspendLayout();
             // 
             // lblDataProvider
@@ -71,6 +74,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
             this.cboSitecoreVersion.Name = "cboSitecoreVersion";
             this.cboSitecoreVersion.Size = new System.Drawing.Size(356, 29);
             this.cboSitecoreVersion.TabIndex = 20;
+            this.cboSitecoreVersion.SelectedIndexChanged += new System.EventHandler(this.cboSitecoreVersion_SelectedIndexChanged);
             // 
             // txtNugetV3
             // 
@@ -89,10 +93,41 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
             this.metroLabel2.TabIndex = 21;
             this.metroLabel2.Text = "Sitecore Package V3 :";
             // 
+            // txtFramework
+            // 
+            this.txtFramework.Location = new System.Drawing.Point(168, 134);
+            this.txtFramework.Name = "txtFramework";
+            this.txtFramework.Size = new System.Drawing.Size(282, 23);
+            this.txtFramework.TabIndex = 24;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(12, 134);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel3.TabIndex = 23;
+            this.metroLabel3.Text = ".Net Framework :";
+            // 
+            // cbFrameworkOverride
+            // 
+            this.cbFrameworkOverride.AutoSize = true;
+            this.cbFrameworkOverride.Checked = true;
+            this.cbFrameworkOverride.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbFrameworkOverride.Location = new System.Drawing.Point(456, 142);
+            this.cbFrameworkOverride.Name = "cbFrameworkOverride";
+            this.cbFrameworkOverride.Size = new System.Drawing.Size(68, 15);
+            this.cbFrameworkOverride.TabIndex = 25;
+            this.cbFrameworkOverride.Text = "Override";
+            this.cbFrameworkOverride.UseVisualStyleBackColor = true;
+            // 
             // SitecoreProjectSetupUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbFrameworkOverride);
+            this.Controls.Add(this.txtFramework);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.txtNugetV3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.cboSitecoreVersion);
@@ -100,7 +135,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
             this.Controls.Add(this.txtSiteCoreUrl);
             this.Controls.Add(this.lblDataProvider);
             this.Name = "SitecoreProjectSetupUC";
-            this.Size = new System.Drawing.Size(550, 150);
+            this.Size = new System.Drawing.Size(550, 179);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +148,8 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Component
         private MetroFramework.Controls.MetroComboBox cboSitecoreVersion;
         private MetroFramework.Controls.MetroTextBox txtNugetV3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox txtFramework;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroCheckBox cbFrameworkOverride;
     }
 }

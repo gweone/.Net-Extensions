@@ -14,7 +14,8 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <CreateInPlace>true</CreateInPlace>
+    <RequiredFrameworkVersion>4.7.1</RequiredFrameworkVersion>
+    <CreateInPlace>true</CreateInPlace>    
     <LanguageTag>C#</LanguageTag>
     <PlatformTag>Windows</PlatformTag>
     <ProjectTypeTag>Web</ProjectTypeTag>
@@ -48,9 +49,9 @@
         </SolutionFolder>
         <SolutionFolder CreateOnDisk="true" Name="jobs"></SolutionFolder>
         <SolutionFolder CreateOnDisk="true" Name="database">
-          <SolutionFolder CreateOnDisk="true" Name="sql">
-
-          </SolutionFolder>
+          <ProjectTemplateLink CopyParameters="true" ProjectName="$projectname$.DbScripts">
+            NetStandard\Database.vstemplate
+          </ProjectTemplateLink>
         </SolutionFolder>
         
       </SolutionFolder>

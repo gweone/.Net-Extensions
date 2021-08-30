@@ -10,7 +10,7 @@
     <TemplateGroupID>Web</TemplateGroupID>
     <TemplateID>Sitecore.Extension.MVC.v1</TemplateID>
     <SortOrder>51</SortOrder>
-    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.7.1</RequiredFrameworkVersion>
     <CreateNewFolder>true</CreateNewFolder>
     <CreateInPlace>true</CreateInPlace>
     <DefaultName>Sitecore.MVC</DefaultName>

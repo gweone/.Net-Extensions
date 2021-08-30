@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>NetStandard</Name>
+    <Description>NetStandard Library</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>NetStandard.Core</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="Database.csproj" ReplaceParameters="true">
+      <Folder Name="data">
+        <ProjectItem ReplaceParameters="true">data.sample.sql</ProjectItem>
+      </Folder>
+      <Folder Name="table">
+        <ProjectItem ReplaceParameters="true">table.sample.sql</ProjectItem>
+      </Folder>
+      <Folder Name="scripts">
+        <ProjectItem ReplaceParameters="true">sp.sample.sql</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

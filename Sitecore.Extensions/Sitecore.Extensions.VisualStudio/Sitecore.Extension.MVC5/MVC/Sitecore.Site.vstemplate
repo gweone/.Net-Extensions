@@ -10,7 +10,7 @@
     <TemplateGroupID>Web</TemplateGroupID>
     <TemplateID>Sitecore.Extension.MVC.v1</TemplateID>
     <SortOrder>51</SortOrder>
-    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.7.1</RequiredFrameworkVersion>
     <CreateNewFolder>true</CreateNewFolder>
     <CreateInPlace>true</CreateInPlace>
     <DefaultName>Sitecore.MVC</DefaultName>
@@ -32,6 +32,17 @@
           <Folder Name="Project" TargetFolderName="Project">
           </Folder>
           <Folder Name="z.Feature.Overrides" TargetFolderName="z.Feature.Overrides">
+            <ProjectItem ReplaceParameters="true">add.Ico.Mediatype.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">default.HtmlEditor.DefaultProfile.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">default.Item.Link.Layout.Not.Found.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">default.Query.MaxItems.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">Settings.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">Sitecore.Resources.Media.MediaCreator.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">SMTP.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">update.BucketConfig.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">update.opti.performance.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">update.pdf.read.on.browser.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true">Update.ServerTimeZone.config</ProjectItem>
           </Folder>
         </Folder>
       </Folder>
@@ -39,6 +50,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$solutionpathformat$\.Website.config">App_Config\Include\Project\Website.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$solutionpathformat$\Website.Serialization.config">App_Config\Include\Project\Website.Serialization.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$solutionpathformat$\z.DevSettings.config">App_Config\Include\Project\z.DevSettings.config</ProjectItem>
+
       <Folder Name="Controllers" TargetFolderName="Controllers">
       </Folder>
       <Folder Name="Models" TargetFolderName="Models">

@@ -84,6 +84,7 @@
     <None Include="MVC\AssemblyInfo.cs" />
     <None Include="NetStandard\Class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="NetStandard\Database.csproj" />
     <None Include="NetStandard\Library.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +97,10 @@
     <None Include="MVC\Icon.MVC.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="NetStandard\data\data.sample.sql" />
+    <None Include="NetStandard\Database.vstemplate" />
+    <None Include="NetStandard\table\table.sample.sql" />
+    <None Include="NetStandard\scripts\sp.sample.sql" />
     <None Include="NetStandard\Library.vstemplate" />
     <None Include="NetStandard\__TemplateIcon.ico" />
     <None Include="MVC\Sitecore.Site.vstemplate" />
@@ -104,12 +109,8 @@
     <None Include="content\content.vstemplate" />
     <None Include="content\tools\unicorn\MicroCHAP.dll" />
     <Content Include="MVC\favicon.ico" />
-    <VSTemplate Include="MVC\Sitecore.MVC.vstemplate">
-      <OutputSubPath>Sitecore\MVC</OutputSubPath>
-    </VSTemplate>
-    <VSTemplate Include="Sitecore.Solution.vstemplate">
-      <OutputSubPath>Sitecore\MVC</OutputSubPath>
-    </VSTemplate>
+    <VSTemplate Include="MVC\Sitecore.MVC.vstemplate" />
+    <VSTemplate Include="SC.vstemplate" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

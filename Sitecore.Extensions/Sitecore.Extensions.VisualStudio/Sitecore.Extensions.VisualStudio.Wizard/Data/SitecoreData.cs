@@ -17,6 +17,7 @@ namespace Sitecore.Extensions.VisualStudio.Wizard.Data
             public string PackageSource { get; set; }
             public string Url { get; set; }
             public string Version { get; set; }
+            public string TargetFramework { get; set; }
         }
 
         public class Smtp
